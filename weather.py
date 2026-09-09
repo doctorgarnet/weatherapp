@@ -7,7 +7,13 @@ def mean(in_series):
     in_series=filter(lambda n:n is float,in_series)
 
 def variance(in_series):
-    pass
+    sum_squares = 0
+    count = 0
+    series_mean = mean(in_series)
+    for index in range(len(in_series)):
+        sum_squares = (series_mean - in_series[index]) ** 2
+        count += 1
+    return sum_squares / count
 
 def standard_deviation(in_series):
     pass
